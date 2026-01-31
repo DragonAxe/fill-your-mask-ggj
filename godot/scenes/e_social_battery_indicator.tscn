@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_rcmwb"]
 script = ExtResource("3_21opm")
+bar_node = NodePath("Bar")
 metadata/_custom_type_script = "uid://d1cogy7mof5a5"
 
 [node name="ESocialBatteryIndicator" type="Control" unique_id=1606906781]

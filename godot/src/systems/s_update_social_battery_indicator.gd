@@ -2,15 +2,15 @@ class_name UpdateSocialBatteryIndicatorSystem
 extends System
 
 func query():
-    # Find all entities that have both transform and velocity
-    return q.with_any([C_SocialBattery, C_SocialBatteryIndicator])
+    return q.with_relationship([Relationship.new(C_Visualizes.new(), Player)]).with_all([C_SocialBatteryIndicator])
 
-func process(entities: Array[Entity], components: Array, delta: float):
-    # Process each entity in the array
-    for battery_entity in entities:
-        if battery_entity.has_component(C_SocialBattery):
-            var c_battery = battery_entity.get_component(C_SocialBattery) as C_SocialBattery
-            for indicator_entity in entities:
-                if indicator_entity.has_component(C_SocialBatteryIndicator):
-                    var c_indicator = indicator_entity.get_component(C_SocialBatteryIndicator) as C_SocialBatteryIndicator
-                    indicator_entity
+func process(entities: Array[Entity], _components: Array, _delta: float):
+    for indicator_entity in entities:
+        var comp = indicator_entity.get_component(C_SocialBatteryIndicator) as C_SocialBatteryIndicator
+        var rel = indicator_entity.get_relationship(Relationship.new(C_Visualizes.new()))
+        var ents_with_c_socialbattery = ECS.world.query.with_all([C_SocialBattery]).matches([rel.target])
+        
+        for player_entity in ents_with_c_socialbattery:
+            var c_battery = player_entity.get_component(C_SocialBattery) as C_SocialBattery
+            var bar_node = indicator_entity.get_node(comp.bar_node) as Range
+            bar_node.value = c_battery.amount
