@@ -15,6 +15,8 @@ func _ready():
     var e_social_battery_indicator = social_battery_indicator_scene.instantiate() as SocialBatteryIndicator
     add_child(e_social_battery_indicator)
     ECS.world.add_entity(e_social_battery_indicator)
+    
+    e_social_battery_indicator.add_relationship(Relationship.new(C_Visualizes.new(), e_player))
 
     #ECS.world.add_system(ConstantBatteryDrainSystem.new())
     #ECS.world.add_system(EndGameEmptyBatterySystem.new())
