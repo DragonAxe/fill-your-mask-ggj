@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://mdqhcgk3txo3"]
+
+[ext_resource type="Script" uid="uid://cdu5tlyk72uu4" path="res://addons/gecs/ecs/world.gd" id="1_7nptk"]
+[ext_resource type="Script" uid="uid://cjgnf7retys53" path="res://src/main.gd" id="1_ipuqq"]
+
+[node name="Main" type="Node" unique_id=517611687]
+script = ExtResource("1_ipuqq")
+
+[node name="World" type="Node" parent="." unique_id=139753638]
+script = ExtResource("1_7nptk")
+metadata/_custom_type_script = "uid://cdu5tlyk72uu4"

@@ -1,0 +1,2 @@
+class_name C_Transform
+extends Component
