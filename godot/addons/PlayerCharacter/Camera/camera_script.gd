@@ -98,7 +98,7 @@ func input_actions_check() -> void:
             if not registered_input_actions.has(input_action):
                 assert(false, "%s missing in InputMap, or input action wrongly named in the editor" % input_action)
                 
-func _unhandled_input(event) -> void:
+func _input(event) -> void:
     #manage camera rotation (360 on x axis, blocked at specified values on y axis, to not having the character do a complete head turn, which will be kinda weird)
     if event is InputEventMouseMotion:
         rotate_y(-event.relative.x * (x_axis_sensibility / 10))
