@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b3oipfe1n26th"]
+
+[ext_resource type="Script" uid="uid://bi5n2ueo20g07" path="res://src/e_player.gd" id="1_kixir"]
+[ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="2_mm2sq"]
+[ext_resource type="Script" uid="uid://dxrqiejdsq0i" path="res://src/c_player.gd" id="3_rkvdg"]
+[ext_resource type="Script" uid="uid://cqwn1g3v7jb7f" path="res://src/c_social_battery.gd" id="4_mijmq"]
+[ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/c_swag_item.gd" id="5_gji2v"]
+
+[sub_resource type="Resource" id="Resource_mijmq"]
+script = ExtResource("3_rkvdg")
+metadata/_custom_type_script = "uid://dxrqiejdsq0i"
+
+[sub_resource type="Resource" id="Resource_4kckt"]
+script = ExtResource("4_mijmq")
+metadata/_custom_type_script = "uid://cqwn1g3v7jb7f"
+
+[sub_resource type="Resource" id="Resource_6bkav"]
+script = ExtResource("5_gji2v")
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[node name="Player" type="Node3D" unique_id=221013809]
+script = ExtResource("1_kixir")
+component_resources = Array[ExtResource("2_mm2sq")]([SubResource("Resource_mijmq"), SubResource("Resource_4kckt"), SubResource("Resource_6bkav")])

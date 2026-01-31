@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://boxkcxmlrpk6x"]
+
+[ext_resource type="Script" uid="uid://dp81ck42qi164" path="res://src/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Node" unique_id=517611687]
+script = ExtResource("1_l6cm7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1094026953]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1968506281]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1975445797]
+layout_mode = 2
+text = "Fill My Mask"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=62254330]
+layout_mode = 2
+
+[node name="StartGame" type="Button" parent="VBoxContainer" unique_id=342047345]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=118433345]
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1073744840]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
