@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dxrqiejdsq0i" path="res://src/components/c_player.gd" id="3_rkvdg"]
 [ext_resource type="Script" uid="uid://cqwn1g3v7jb7f" path="res://src/components/c_social_battery.gd" id="4_mijmq"]
 [ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="5_gji2v"]
+[ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="6_gji2v"]
 
 [sub_resource type="Resource" id="Resource_mijmq"]
 script = ExtResource("3_rkvdg")
@@ -18,6 +19,10 @@ metadata/_custom_type_script = "uid://cqwn1g3v7jb7f"
 script = ExtResource("5_gji2v")
 metadata/_custom_type_script = "uid://nlpp7fel0jf0"
 
+[sub_resource type="Resource" id="Resource_kyg1c"]
+script = ExtResource("6_gji2v")
+metadata/_custom_type_script = "uid://v3yycfvm1yno"
+
 [node name="Player" type="Node3D" unique_id=221013809]
 script = ExtResource("1_kixir")
-component_resources = Array[ExtResource("2_mm2sq")]([SubResource("Resource_mijmq"), SubResource("Resource_4kckt"), SubResource("Resource_6bkav")])
+component_resources = Array[ExtResource("2_mm2sq")]([SubResource("Resource_mijmq"), SubResource("Resource_4kckt"), SubResource("Resource_6bkav"), SubResource("Resource_kyg1c")])

@@ -1,4 +1,4 @@
-class_name ConstantBatteryDrainSystem
+class_name BatteryDrainConstantSystem
 extends System
 
 func query():

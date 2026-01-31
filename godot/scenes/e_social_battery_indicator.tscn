@@ -19,7 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_wicxw")
 component_resources = Array[ExtResource("2_4rwd8")]([SubResource("Resource_rcmwb")])
 
-[node name="Bar" type="ProgressBar" parent="." unique_id=444647799]
+[node name="Bar" type="TextureProgressBar" parent="." unique_id=462407419]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10

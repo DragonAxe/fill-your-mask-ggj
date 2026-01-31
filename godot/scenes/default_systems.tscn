@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://i0ospkv4mgxc"]
 
 [ext_resource type="Script" uid="uid://b3vi2ingux88g" path="res://addons/gecs/lib/system_group.gd" id="1_vfbru"]
-[ext_resource type="Script" uid="uid://bfkpgs1lxhh6k" path="res://src/systems/s_constant_battery_drain.gd" id="2_idf8x"]
+[ext_resource type="Script" uid="uid://bfkpgs1lxhh6k" path="res://src/systems/s_battery_drain_constant.gd" id="2_idf8x"]
 [ext_resource type="Script" uid="uid://xn3fmr3axcn" path="res://src/systems/s_end_game_empty_battery.gd" id="3_68l4l"]
+[ext_resource type="Script" uid="uid://d02juewu03isx" path="res://src/systems/s_battery_drain_stand_still.gd" id="3_ibtd2"]
 [ext_resource type="Script" uid="uid://c7177fhsf2eeo" path="res://src/systems/s_update_social_battery_indicator.gd" id="4_ibtd2"]
 
 [node name="DefaultSystems" type="Node" unique_id=755715131]
@@ -15,17 +16,22 @@ metadata/_custom_type_script = "uid://b3vi2ingux88g"
 script = ExtResource("1_vfbru")
 metadata/_custom_type_script = "uid://b3vi2ingux88g"
 
-[node name="ConstantBatteryDrainSystem" type="Node" parent="update" unique_id=1455243259]
+[node name="BatteryDrainConstantSystem" type="Node" parent="update" unique_id=962303639]
 script = ExtResource("2_idf8x")
 group = &"update"
 metadata/_custom_type_script = "uid://bfkpgs1lxhh6k"
 
-[node name="EndGameEmptyBatterySystem" type="Node" parent="update" unique_id=701817091]
+[node name="BatteryDrainStandStillSystem" type="Node" parent="update" unique_id=1684236889]
+script = ExtResource("3_ibtd2")
+group = &"update"
+metadata/_custom_type_script = "uid://d02juewu03isx"
+
+[node name="EndGameEmptyBatterySystem" type="Node" parent="update" unique_id=938498477]
 script = ExtResource("3_68l4l")
 group = &"update"
 metadata/_custom_type_script = "uid://xn3fmr3axcn"
 
-[node name="UpdateSocialBatteryIndicatorSystem" type="Node" parent="update" unique_id=700820430]
+[node name="UpdateSocialBatteryIndicatorSystem" type="Node" parent="update" unique_id=82884813]
 script = ExtResource("4_ibtd2")
 group = &"update"
 metadata/_custom_type_script = "uid://c7177fhsf2eeo"

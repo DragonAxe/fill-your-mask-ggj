@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bxqdvcxx5m5r3"]
+
+[ext_resource type="Script" uid="uid://bi5n2ueo20g07" path="res://src/entities/e_player.gd" id="1_wequf"]
+[ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="2_mjbx6"]
+[ext_resource type="Script" uid="uid://drfds4opchu5j" path="res://src/components/c_group.gd" id="3_mjbx6"]
+[ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="3_yndxj"]
+[ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="5_2lngi"]
+[ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="6_3nxw1"]
+
+[sub_resource type="Resource" id="Resource_vsuaj"]
+script = ExtResource("3_mjbx6")
+metadata/_custom_type_script = "uid://drfds4opchu5j"
+
+[sub_resource type="Resource" id="Resource_wequf"]
+script = ExtResource("3_yndxj")
+metadata/_custom_type_script = "uid://bo1l048gnxe72"
+
+[sub_resource type="Resource" id="Resource_mjbx6"]
+script = ExtResource("5_2lngi")
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[sub_resource type="Resource" id="Resource_2lngi"]
+script = ExtResource("6_3nxw1")
+metadata/_custom_type_script = "uid://v3yycfvm1yno"
+
+[node name="Group" type="Node3D" unique_id=221013809]
+script = ExtResource("1_wequf")
+component_resources = Array[ExtResource("2_mjbx6")]([SubResource("Resource_vsuaj"), SubResource("Resource_wequf"), SubResource("Resource_mjbx6"), SubResource("Resource_2lngi")])
