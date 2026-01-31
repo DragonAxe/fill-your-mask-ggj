@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://i0ospkv4mgxc"]
+
+[ext_resource type="Script" uid="uid://b3vi2ingux88g" path="res://addons/gecs/lib/system_group.gd" id="1_vfbru"]
+[ext_resource type="Script" uid="uid://bfkpgs1lxhh6k" path="res://src/systems/s_constant_battery_drain.gd" id="2_idf8x"]
+[ext_resource type="Script" uid="uid://xn3fmr3axcn" path="res://src/systems/s_end_game_empty_battery.gd" id="3_68l4l"]
+[ext_resource type="Script" uid="uid://c7177fhsf2eeo" path="res://src/systems/s_update_social_battery_indicator.gd" id="4_ibtd2"]
+
+[node name="DefaultSystems" type="Node" unique_id=755715131]
+
+[node name="first" type="Node" parent="." unique_id=1837750511]
+script = ExtResource("1_vfbru")
+metadata/_custom_type_script = "uid://b3vi2ingux88g"
+
+[node name="update" type="Node" parent="." unique_id=526687223]
+script = ExtResource("1_vfbru")
+metadata/_custom_type_script = "uid://b3vi2ingux88g"
+
+[node name="ConstantBatteryDrainSystem" type="Node" parent="update" unique_id=1455243259]
+script = ExtResource("2_idf8x")
+group = &"update"
+metadata/_custom_type_script = "uid://bfkpgs1lxhh6k"
+
+[node name="EndGameEmptyBatterySystem" type="Node" parent="update" unique_id=701817091]
+script = ExtResource("3_68l4l")
+group = &"update"
+metadata/_custom_type_script = "uid://xn3fmr3axcn"
+
+[node name="UpdateSocialBatteryIndicatorSystem" type="Node" parent="update" unique_id=700820430]
+script = ExtResource("4_ibtd2")
+group = &"update"
+metadata/_custom_type_script = "uid://c7177fhsf2eeo"
+
+[node name="last" type="Node" parent="." unique_id=711294309]
+script = ExtResource("1_vfbru")
+metadata/_custom_type_script = "uid://b3vi2ingux88g"

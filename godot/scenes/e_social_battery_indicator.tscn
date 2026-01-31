@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://xgb1xe4yhai4"]
 
-[ext_resource type="Script" uid="uid://cj1lt5aa1rlui" path="res://src/e_social_battery_indicator.gd" id="1_wicxw"]
+[ext_resource type="Script" uid="uid://cj1lt5aa1rlui" path="res://src/entities/e_social_battery_indicator.gd" id="1_wicxw"]
 [ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="2_4rwd8"]
-[ext_resource type="Script" uid="uid://d1cogy7mof5a5" path="res://src/c_slocal_battery_indicator.gd" id="3_21opm"]
+[ext_resource type="Script" uid="uid://d1cogy7mof5a5" path="res://src/components/c_slocal_battery_indicator.gd" id="3_21opm"]
 
 [sub_resource type="Resource" id="Resource_rcmwb"]
 script = ExtResource("3_21opm")
@@ -18,7 +18,8 @@ grow_vertical = 2
 script = ExtResource("1_wicxw")
 component_resources = Array[ExtResource("2_4rwd8")]([SubResource("Resource_rcmwb")])
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=444647799]
+[node name="Bar" type="ProgressBar" parent="." unique_id=444647799]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

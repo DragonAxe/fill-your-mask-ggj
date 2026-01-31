@@ -2,10 +2,71 @@
 
 [ext_resource type="Script" uid="uid://cdu5tlyk72uu4" path="res://addons/gecs/ecs/world.gd" id="1_7nptk"]
 [ext_resource type="Script" uid="uid://cjgnf7retys53" path="res://src/main.gd" id="1_ipuqq"]
+[ext_resource type="PackedScene" uid="uid://i0ospkv4mgxc" path="res://scenes/default_systems.tscn" id="3_cela1"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="3_h5xqe"]
+[ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="4_5gm6p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cela1"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_or4b6"]
+sky_material = SubResource("ProceduralSkyMaterial_cela1")
+
+[sub_resource type="Environment" id="Environment_6nh0b"]
+background_mode = 2
+sky = SubResource("Sky_or4b6")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Main" type="Node" unique_id=517611687]
 script = ExtResource("1_ipuqq")
 
 [node name="World" type="Node" parent="." unique_id=139753638]
 script = ExtResource("1_7nptk")
+entity_nodes_root = NodePath("Entities")
+system_nodes_root = NodePath("Systems")
 metadata/_custom_type_script = "uid://cdu5tlyk72uu4"
+
+[node name="Entities" type="Node" parent="World" unique_id=1684825776]
+
+[node name="Systems" type="Node" parent="World" unique_id=1510256947]
+
+[node name="DefaultSystems" parent="World/Systems" unique_id=755715131 instance=ExtResource("3_cela1")]
+
+[node name="Level" type="Node3D" parent="." unique_id=329920848]
+
+[node name="ForceUnhandledInput" type="CenterContainer" parent="Level" unique_id=733868761]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=284398586]
+environment = SubResource("Environment_6nh0b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=1047086043]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="PlayerCharacter" parent="Level" unique_id=1737810083 instance=ExtResource("3_h5xqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0558124, 0)
+crouch_speed = 2.0
+walk_speed = 4.0
+run_speed = 8.0
+continious_run = false
+fly_speed = 4.0
+
+[node name="BasicBlock" parent="Level" unique_id=1969651633 instance=ExtResource("4_5gm6p")]
+transform = Transform3D(30.344648, 0, 0, 0, 1, 0, 0, 0, 28.446966, -1.7720977, 0, 1.6313562)
+
+[node name="BasicBlock2" parent="Level" unique_id=1821028371 instance=ExtResource("4_5gm6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2369037, 1, 0.49404907)
+block_color_group = 3
+
+[node name="BasicBlock3" parent="Level" unique_id=1748885380 instance=ExtResource("4_5gm6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1831093, 1, 5.675357)
+block_color_group = 1
+
+[node name="Entities" type="Node3D" parent="." unique_id=1603064300]
