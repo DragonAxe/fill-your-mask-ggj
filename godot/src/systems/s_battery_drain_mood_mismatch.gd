@@ -1,8 +1,8 @@
-class_name BatteryDrainConstantSystem
+class_name BatteryDrainMoodMismatchSystem
 extends System
 
 func query():
-    return q.with_all([C_SocialBattery]).iterate([C_SocialBattery])
+    return q.with_all([C_SocialBattery, C_Mood, C_Transform]).iterate([C_SocialBattery, C_Mood, C_Transform])
 
 func process(entities: Array[Entity], components: Array, delta: float):
     for entity in entities:
