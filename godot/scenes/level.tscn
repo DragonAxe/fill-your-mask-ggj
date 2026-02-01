@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c5xk16dai6f4d" path="res://assets/Props/MerchBag.glb" id="13_wc255"]
 [ext_resource type="PackedScene" uid="uid://beff32tjjacge" path="res://assets/Props/Plushie.glb" id="14_arp2o"]
 [ext_resource type="PackedScene" uid="uid://cqmkuu1snbwbm" path="res://src/entities/e_pickup.tscn" id="14_wc255"]
+[ext_resource type="PackedScene" uid="uid://duytaumea58ns" path="res://assets/Art/Characters/MoodyGuy1/MoodyGuy1.glb" id="15_wc255"]
+[ext_resource type="PackedScene" uid="uid://cyq0o8wc61r4t" path="res://assets/Art/Environment/Table/table.glb" id="17_ux5qa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cela1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -116,19 +118,16 @@ shadow_enabled = true
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
 
 [node name="BasicBlock2" parent="." unique_id=300831178 instance=ExtResource("2_w8frs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2369037, 1, 0.49404907)
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, -6.2369037, 1.5857613, 0.49404907)
 block_color_group = 3
 
 [node name="BasicBlock3" parent="." unique_id=1019045706 instance=ExtResource("2_w8frs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1831093, 1, 5.675357)
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, -3.1831093, 1.5857613, 5.675357)
 block_color_group = 1
 
 [node name="BasicBlock4" parent="." unique_id=1555644999 instance=ExtResource("2_w8frs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.949478, 1, 5.675357)
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 8.949478, 1.5857613, 5.675357)
 block_color_group = 4
-
-[node name="lilguyTest" parent="." unique_id=1903256947 instance=ExtResource("3_w8frs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6488216, 0.5, 1.3049202)
 
 [node name="Player" parent="." unique_id=221013809 instance=ExtResource("3_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
@@ -170,3 +169,21 @@ metadata/_edit_group_ = true
 
 [node name="ChipBag" parent="ChipBackPickup" unique_id=417910255 instance=ExtResource("12_fpun6")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.5, 0)
+
+[node name="MoodyGuy1" parent="." unique_id=1804567031 instance=ExtResource("15_wc255")]
+transform = Transform3D(-6.5313344, 0, 2.5182672, 0, 7, 0, -2.5182672, 0, -6.5313344, 7.978794, 0.5109011, 6.812085)
+
+[node name="lilguyTest" parent="." unique_id=382166717 instance=ExtResource("3_w8frs")]
+transform = Transform3D(-4.9894977, 0, -4.9096756, 0, 7, 0, 4.9096756, 0, -4.9894977, -2.0075827, 0.5109011, 7.222299)
+
+[node name="lilguyTest2" parent="." unique_id=1522618664 instance=ExtResource("3_w8frs")]
+transform = Transform3D(5.28513, 0, 4.5899234, 0, 7, 0, -4.5899234, 0, 5.28513, -6.093088, 0.5109011, -1.7540498)
+
+[node name="table" parent="." unique_id=170215667 instance=ExtResource("17_ux5qa")]
+transform = Transform3D(-2.2881732, 0, -1.0071065, 0, 2.5, 0, 1.0071065, 0, -2.2881732, -3.3417416, 0.45, 5.696326)
+
+[node name="table2" parent="." unique_id=250815178 instance=ExtResource("17_ux5qa")]
+transform = Transform3D(-1.504921, 0, 1.9962999, 0, 2.4999998, 0, -1.9962999, 0, -1.504921, 8.92871, 0.45, 5.724583)
+
+[node name="table3" parent="." unique_id=555769980 instance=ExtResource("17_ux5qa")]
+transform = Transform3D(1.415512, 0, 2.0606616, 0, 2.4999995, 0, -2.0606616, 0, 1.415512, -6.289068, 0.4499995, 0.54090667)
