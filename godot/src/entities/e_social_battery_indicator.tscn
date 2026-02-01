@@ -9,9 +9,9 @@
 
 [sub_resource type="Resource" id="Resource_rcmwb"]
 script = ExtResource("3_21opm")
-battery_bar_path = NodePath("VBoxContainer/BatteryBar")
-stress_bar_up_path = NodePath("VBoxContainer/HBoxContainer/StressBarUp")
-stress_bar_down_path = NodePath("VBoxContainer/HBoxContainer/StressBarDown")
+battery_bar_path = NodePath("VBoxContainer/TextureProgressBar")
+stress_bar_up_path = NodePath("VBoxContainer2/HBoxContainer/StressBarUp")
+stress_bar_down_path = NodePath("VBoxContainer2/HBoxContainer/StressBarDown")
 metadata/_custom_type_script = "uid://d1cogy7mof5a5"
 
 [node name="ESocialBatteryIndicator" type="Control" unique_id=1606906781]
@@ -26,48 +26,35 @@ component_resources = Array[ExtResource("2_4rwd8")]([SubResource("Resource_rcmwb
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=325493161]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 111.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 76.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 0.5058824)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=990857363]
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2097853889]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 192.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.5
+offset_top = 16.0
+offset_right = 286.5
+offset_bottom = 66.0
 grow_horizontal = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer" unique_id=726206890]
-layout_mode = 2
-text = "Social Battery"
-horizontal_alignment = 1
-
-[node name="BatteryBar" type="ProgressBar" parent="VBoxContainer" unique_id=752232385]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer" unique_id=1671024117]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-value = 50.0
-texture_under = ExtResource("4_4kgav")
-texture_over = ExtResource("5_423dx")
-texture_progress = ExtResource("6_ttb42")
-texture_progress_offset = Vector2(15, 14)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=907294053]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=907294053]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1544620358]
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer" unique_id=1544620358]
 layout_mode = 2
 text = "Stressed out!"
 
-[node name="StressBarDown" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=2137391140]
+[node name="StressBarDown" type="ProgressBar" parent="VBoxContainer2/HBoxContainer" unique_id=2137391140]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -76,7 +63,7 @@ value = 100.0
 fill_mode = 1
 show_percentage = false
 
-[node name="StressBarUp" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=705810169]
+[node name="StressBarUp" type="ProgressBar" parent="VBoxContainer2/HBoxContainer" unique_id=705810169]
 modulate = Color(0.004251957, 1, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -84,11 +71,43 @@ size_flags_vertical = 1
 value = 100.0
 show_percentage = false
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1186506412]
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer" unique_id=1186506412]
 layout_mode = 2
 text = "Invigorated!"
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1387299964]
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1387299964]
 layout_mode = 2
 text = "So lonely... Must socialize! But with who, and how? Ug... this is so stressful!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=990857363]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -123.0
+offset_right = 308.0
+offset_bottom = -32.0
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=726206890]
+layout_mode = 2
+text = "Social Battery"
 horizontal_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer" unique_id=1671024117]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+value = 50.0
+texture_under = ExtResource("4_4kgav")
+texture_over = ExtResource("5_423dx")
+texture_progress = ExtResource("6_ttb42")
+texture_progress_offset = Vector2(15, 14)
+
+[node name="BatteryBar" type="ProgressBar" parent="VBoxContainer" unique_id=752232385]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
