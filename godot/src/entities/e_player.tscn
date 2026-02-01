@@ -24,6 +24,7 @@ metadata/_custom_type_script = "uid://nlpp7fel0jf0"
 
 [sub_resource type="Resource" id="Resource_kyg1c"]
 script = ExtResource("6_gji2v")
+type = 1
 metadata/_custom_type_script = "uid://v3yycfvm1yno"
 
 [sub_resource type="Resource" id="Resource_w83ew"]
@@ -42,4 +43,11 @@ run_speed = 8.0
 continious_run = false
 fly_speed = 4.0
 
+[node name="PickupRay" type="RayCast3D" parent="PlayerCharacter/CameraHolder/Camera/CameraBasedRaycasts" parent_id_path=PackedInt32Array(1715607006, 1117136515) index="2" unique_id=1056203546]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(-2, 0, 0)
+
 [node name="ESocialBatteryIndicator" parent="." unique_id=1606906781 instance=ExtResource("9_kyg1c")]
+
+[editable path="PlayerCharacter"]

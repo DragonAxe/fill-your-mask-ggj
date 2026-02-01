@@ -21,12 +21,25 @@ grow_vertical = 2
 script = ExtResource("1_wicxw")
 component_resources = Array[ExtResource("2_4rwd8")]([SubResource("Resource_rcmwb")])
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=325493161]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 111.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.5058824)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=990857363]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 58.0
 grow_horizontal = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=726206890]
+layout_mode = 2
+text = "Social Battery"
+horizontal_alignment = 1
 
 [node name="BatteryBar" type="ProgressBar" parent="VBoxContainer" unique_id=752232385]
 unique_name_in_owner = true
@@ -36,12 +49,16 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1544620358]
+layout_mode = 2
+text = "Stressed out!"
+
 [node name="StressBarDown" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=2137391140]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-value = 10.0
+value = 100.0
 fill_mode = 1
 show_percentage = false
 
@@ -50,5 +67,14 @@ modulate = Color(0.004251957, 1, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-value = 10.0
+value = 100.0
 show_percentage = false
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1186506412]
+layout_mode = 2
+text = "Invigorated!"
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1387299964]
+layout_mode = 2
+text = "So lonely... Must socialize! But with who, and how? Ug... this is so stressful!"
+horizontal_alignment = 1

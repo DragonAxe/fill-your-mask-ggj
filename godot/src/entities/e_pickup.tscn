@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqmkuu1snbwbm"]
+
+[ext_resource type="Script" uid="uid://dakqmhkdpcx12" path="res://src/entities/e_pickup.gd" id="1_dxnfv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dxnfv"]
+radius = 1.0
+
+[node name="Pickup" type="Node3D" unique_id=778531110]
+script = ExtResource("1_dxnfv")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1076214690]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=984871221]
+shape = SubResource("SphereShape3D_dxnfv")

@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="7_64w2a"]
 [ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="8_fpun6"]
 [ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="9_wc255"]
+[ext_resource type="PackedScene" uid="uid://hx1os7n551td" path="res://assets/Props/ChipBag.glb" id="12_fpun6"]
+[ext_resource type="PackedScene" uid="uid://c5xk16dai6f4d" path="res://assets/Props/MerchBag.glb" id="13_wc255"]
+[ext_resource type="PackedScene" uid="uid://beff32tjjacge" path="res://assets/Props/Plushie.glb" id="14_arp2o"]
+[ext_resource type="PackedScene" uid="uid://cqmkuu1snbwbm" path="res://src/entities/e_pickup.tscn" id="14_wc255"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cela1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -145,3 +149,24 @@ metadata/_edit_pinned_properties_ = [&"component_resources"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.912512, 2.0000005, 5.722271)
 component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_64w2a"), SubResource("Resource_fpun6"), SubResource("Resource_wc255"), SubResource("Resource_arp2o")])
 metadata/_edit_pinned_properties_ = [&"component_resources"]
+
+[node name="MerchBagPickup" parent="." unique_id=771682360 instance=ExtResource("14_wc255")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6855655, 1.1727722, 12.322831)
+metadata/_edit_group_ = true
+
+[node name="MerchBag" parent="MerchBagPickup" unique_id=1338716786 instance=ExtResource("13_wc255")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.3382368, 0)
+
+[node name="PlushiePickup" parent="." unique_id=717554067 instance=ExtResource("14_wc255")]
+transform = Transform3D(-0.54579484, 0, 0.8379188, 0, 1, 0, -0.8379188, 0, -0.54579484, -11, 1.086847, 10)
+metadata/_edit_group_ = true
+
+[node name="Plushie" parent="PlushiePickup" unique_id=507072438 instance=ExtResource("14_arp2o")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.4610573, 0)
+
+[node name="ChipBackPickup" parent="." unique_id=1860248699 instance=ExtResource("14_wc255")]
+transform = Transform3D(0.9991974, 0.03674011, 0.015953377, -0.020108998, 0.11567251, 0.99308383, 0.03464064, -0.99260765, 0.116318494, 5, 1, -10)
+metadata/_edit_group_ = true
+
+[node name="ChipBag" parent="ChipBackPickup" unique_id=417910255 instance=ExtResource("12_fpun6")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.5, 0)

@@ -16,5 +16,5 @@ func process(entities: Array[Entity], _components: Array, _delta: float):
             var stress_bar_up_node = indicator_entity.get_node(comp.stress_bar_up_path) as Range
             var stress_bar_down_node = indicator_entity.get_node(comp.stress_bar_down_path) as Range
             battery_bar_node.value = c_battery.amount
-            stress_bar_up_node.value = lerpf(stress_bar_up_node.value, maxf(c_battery.change, 0.0) * 1000.0, 0.1)
-            stress_bar_down_node.value = lerpf(stress_bar_down_node.value, maxf(-c_battery.change, 0.0) * 1000.0, 0.1)
+            stress_bar_up_node.value = lerpf(stress_bar_up_node.value, maxf(c_battery.change, 0.0) * 1000.0, 0.05)
+            stress_bar_down_node.value = lerpf(stress_bar_down_node.value, maxf(-c_battery.change, 0.0) * 1000.0, 0.05)
