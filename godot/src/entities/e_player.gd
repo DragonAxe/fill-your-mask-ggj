@@ -1,4 +1,4 @@
-# e_player.gd
+@tool
 class_name Player
 extends Entity
 
@@ -7,3 +7,4 @@ func on_ready():
     if has_component(C_Transform):
         var c_trs = get_component(C_Transform) as C_Transform
         c_trs.position = self.global_position
+    $ESocialBatteryIndicator.add_relationship(Relationship.new(C_Visualizes.new(), self))

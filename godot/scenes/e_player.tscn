@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://cqwn1g3v7jb7f" path="res://src/components/c_social_battery.gd" id="4_mijmq"]
 [ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="5_gji2v"]
 [ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="6_gji2v"]
+[ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="7_4kckt"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="8_6bkav"]
+[ext_resource type="PackedScene" uid="uid://xgb1xe4yhai4" path="res://scenes/e_social_battery_indicator.tscn" id="9_kyg1c"]
 
 [sub_resource type="Resource" id="Resource_mijmq"]
 script = ExtResource("3_rkvdg")
@@ -23,6 +26,20 @@ metadata/_custom_type_script = "uid://nlpp7fel0jf0"
 script = ExtResource("6_gji2v")
 metadata/_custom_type_script = "uid://v3yycfvm1yno"
 
-[node name="Player" type="Node3D" unique_id=221013809]
+[sub_resource type="Resource" id="Resource_w83ew"]
+script = ExtResource("7_4kckt")
+synchronized_position = NodePath("PlayerCharacter")
+metadata/_custom_type_script = "uid://bo1l048gnxe72"
+
+[node name="Player" type="Node3D" unique_id=221013809 groups=["player_entity"]]
 script = ExtResource("1_kixir")
-component_resources = Array[ExtResource("2_mm2sq")]([SubResource("Resource_mijmq"), SubResource("Resource_4kckt"), SubResource("Resource_6bkav"), SubResource("Resource_kyg1c")])
+component_resources = Array[ExtResource("2_mm2sq")]([SubResource("Resource_mijmq"), SubResource("Resource_4kckt"), SubResource("Resource_6bkav"), SubResource("Resource_kyg1c"), SubResource("Resource_w83ew")])
+
+[node name="PlayerCharacter" parent="." unique_id=1715607006 instance=ExtResource("8_6bkav")]
+crouch_speed = 2.0
+walk_speed = 4.0
+run_speed = 8.0
+continious_run = false
+fly_speed = 4.0
+
+[node name="ESocialBatteryIndicator" parent="." unique_id=1606906781 instance=ExtResource("9_kyg1c")]

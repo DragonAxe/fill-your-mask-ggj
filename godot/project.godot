@@ -33,6 +33,10 @@ import/blender/enabled=false
 settings/log_level=1
 settings/debug_mode=true
 
+[global_group]
+
+player_entity="Marker group that identifies the player's GECS entity node"
+
 [input]
 
 play_char_move_forward={

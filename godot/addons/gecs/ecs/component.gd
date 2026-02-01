@@ -38,11 +38,11 @@ var parent: Entity
 ## Used to serialize the component to a dictionary with only the export variables
 ## This is used for the debugger to send the data to the editor
 func serialize() -> Dictionary:
-	var data: Dictionary = {}
-	for prop_info in get_script().get_script_property_list():
-		# Only include properties that are exported (@export variables)
-		if prop_info.usage & PROPERTY_USAGE_EDITOR:
-			var prop_name: String = prop_info.name
-			var prop_val = get(prop_name)
-			data[prop_name] = prop_val
-	return data
+    var data: Dictionary = {}
+    for prop_info in get_script().get_script_property_list():
+        # Only include properties that are exported (@export variables)
+        if prop_info.usage & PROPERTY_USAGE_EDITOR:
+            var prop_name: String = prop_info.name
+            var prop_val = get(prop_name)
+            data[prop_name] = prop_val
+    return data

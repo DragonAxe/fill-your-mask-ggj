@@ -10,7 +10,7 @@ script = ExtResource("1_ipuqq")
 
 [node name="World" type="Node" parent="." unique_id=139753638]
 script = ExtResource("1_7nptk")
-entity_nodes_root = NodePath("../Entities")
+entity_nodes_root = NodePath("../Level")
 system_nodes_root = NodePath("../Systems")
 metadata/_custom_type_script = "uid://cdu5tlyk72uu4"
 
