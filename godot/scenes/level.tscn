@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://d3xhkavk4ost3" path="res://assets/Art/lilGuy/lilguyTest.glb" id="3_w8frs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cela1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,3 +44,6 @@ block_color_group = 3
 [node name="BasicBlock3" parent="." unique_id=1019045706 instance=ExtResource("2_w8frs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1831093, 1, 5.675357)
 block_color_group = 1
+
+[node name="lilguyTest" parent="." unique_id=1903256947 instance=ExtResource("3_w8frs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6488216, 0.5, 1.3049202)

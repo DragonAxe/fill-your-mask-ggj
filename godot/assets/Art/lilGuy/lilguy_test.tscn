@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dv8eqjoy7sd5q"]
+
+[ext_resource type="PackedScene" uid="uid://d3xhkavk4ost3" path="res://assets/Art/lilGuy/lilguyTest.glb" id="1_3yyoj"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3yyoj"]
+animation = &"lilBounce"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_83gh4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qfwc1"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jrpi4"]
+states/Start/position = Vector2(431.2, 106.362885)
+states/lilBounce/node = SubResource("AnimationNodeAnimation_3yyoj")
+states/lilBounce/position = Vector2(594.6, 92.572365)
+transitions = ["Start", "lilBounce", SubResource("AnimationNodeStateMachineTransition_83gh4"), "lilBounce", "End", SubResource("AnimationNodeStateMachineTransition_qfwc1")]
+graph_offset = Vector2(111, -8)
+
+[node name="lilguyTest" unique_id=1903256947 instance=ExtResource("1_3yyoj")]
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=458461510]
+tree_root = SubResource("AnimationNodeStateMachine_jrpi4")
+anim_player = NodePath("../AnimationPlayer")
