@@ -5,5 +5,7 @@ extends Component
 
 enum SwagType {
   NONE,
-  BOTTLE,
+  MERCH_BAG,
+  PLUSHIE,
+  CHIP_BAG,
 }

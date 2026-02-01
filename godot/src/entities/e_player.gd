@@ -9,4 +9,5 @@ func on_ready():
         c_trs.position = self.global_position
     var c_mood = get_component(C_Mood) as C_Mood
     c_mood.type = C_Mood.random_mood()
+    print("Assigned mood to player: ", c_mood.type)
     $ESocialBatteryIndicator.add_relationship(Relationship.new(C_Visualizes.new(), self))

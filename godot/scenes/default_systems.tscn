@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://c5pc4j122gjky" path="res://src/systems/s_synchronize_transform.gd" id="5_cekhb"]
 [ext_resource type="Script" uid="uid://c0msx1ujs5ixw" path="res://src/systems/s_battery_drain_mood_mismatch.gd" id="7_wdfho"]
 [ext_resource type="Script" uid="uid://cl8vcgnonrgie" path="res://src/systems/s_apply_battery_change.gd" id="8_ce4gx"]
+[ext_resource type="Script" uid="uid://dm1k7weausqtk" path="res://src/systems/s_pickup_input_processing.gd" id="8_okawc"]
+[ext_resource type="Script" uid="uid://do0oor5ihp424" path="res://src/systems/s_pickup_grab_force.gd" id="9_mbtv4"]
 
 [node name="DefaultSystems" type="Node" unique_id=755715131]
 
@@ -46,7 +48,16 @@ metadata/_custom_type_script = "uid://c5pc4j122gjky"
 
 [node name="BatteryDrainMoodMismatchSystem" type="Node" parent="update" unique_id=1967983536]
 script = ExtResource("7_wdfho")
+group = &"update"
 metadata/_custom_type_script = "uid://c0msx1ujs5ixw"
+
+[node name="PickupInputProcessingSystem" type="Node" parent="update" unique_id=1079763492]
+script = ExtResource("8_okawc")
+metadata/_custom_type_script = "uid://dm1k7weausqtk"
+
+[node name="PickupGrabForceSystem" type="Node" parent="update" unique_id=71846565]
+script = ExtResource("9_mbtv4")
+metadata/_custom_type_script = "uid://do0oor5ihp424"
 
 [node name="last" type="Node" parent="." unique_id=711294309]
 script = ExtResource("1_vfbru")
@@ -54,4 +65,5 @@ metadata/_custom_type_script = "uid://b3vi2ingux88g"
 
 [node name="UpdateSocialBatteryIndicatorSystem" type="Node" parent="last" unique_id=82884813]
 script = ExtResource("4_ibtd2")
+group = &"last"
 metadata/_custom_type_script = "uid://c7177fhsf2eeo"

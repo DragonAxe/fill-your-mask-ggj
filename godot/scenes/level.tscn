@@ -4,13 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://b3oipfe1n26th" path="res://src/entities/e_player.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d3xhkavk4ost3" path="res://assets/Art/lilGuy/lilguyTest.glb" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bxqdvcxx5m5r3" path="res://src/entities/e_group.tscn" id="4_mx8sn"]
-[ext_resource type="Script" uid="uid://dxrqiejdsq0i" path="res://src/components/c_player.gd" id="5_8iemx"]
 [ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="5_t1rx8"]
 [ext_resource type="Script" uid="uid://drfds4opchu5j" path="res://src/components/c_group.gd" id="6_8iemx"]
-[ext_resource type="Script" uid="uid://cqwn1g3v7jb7f" path="res://src/components/c_social_battery.gd" id="6_64w2a"]
 [ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="7_64w2a"]
 [ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="8_fpun6"]
 [ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="9_wc255"]
+[ext_resource type="Script" uid="uid://coh8jvqn553wx" path="res://src/components/c_pickup.gd" id="10_arp2o"]
 [ext_resource type="PackedScene" uid="uid://hx1os7n551td" path="res://assets/Props/ChipBag.glb" id="12_fpun6"]
 [ext_resource type="PackedScene" uid="uid://c5xk16dai6f4d" path="res://assets/Props/MerchBag.glb" id="13_wc255"]
 [ext_resource type="PackedScene" uid="uid://beff32tjjacge" path="res://assets/Props/Plushie.glb" id="14_arp2o"]
@@ -30,28 +29,6 @@ background_mode = 2
 sky = SubResource("Sky_or4b6")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="Resource" id="Resource_mijmq"]
-script = ExtResource("5_8iemx")
-metadata/_custom_type_script = "uid://dxrqiejdsq0i"
-
-[sub_resource type="Resource" id="Resource_4kckt"]
-script = ExtResource("6_64w2a")
-metadata/_custom_type_script = "uid://cqwn1g3v7jb7f"
-
-[sub_resource type="Resource" id="Resource_6bkav"]
-script = ExtResource("9_wc255")
-metadata/_custom_type_script = "uid://nlpp7fel0jf0"
-
-[sub_resource type="Resource" id="Resource_kyg1c"]
-script = ExtResource("8_fpun6")
-type = 1
-metadata/_custom_type_script = "uid://v3yycfvm1yno"
-
-[sub_resource type="Resource" id="Resource_w83ew"]
-script = ExtResource("7_64w2a")
-synchronized_position = NodePath("PlayerCharacter")
-metadata/_custom_type_script = "uid://bo1l048gnxe72"
 
 [sub_resource type="Resource" id="Resource_qtbll"]
 script = ExtResource("6_8iemx")
@@ -104,6 +81,25 @@ metadata/_custom_type_script = "uid://v3yycfvm1yno"
 script = ExtResource("9_wc255")
 metadata/_custom_type_script = "uid://nlpp7fel0jf0"
 
+[sub_resource type="Resource" id="Resource_vd0sl"]
+script = ExtResource("10_arp2o")
+metadata/_custom_type_script = "uid://coh8jvqn553wx"
+
+[sub_resource type="Resource" id="Resource_ux5qa"]
+script = ExtResource("9_wc255")
+type = 1
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[sub_resource type="Resource" id="Resource_82cfe"]
+script = ExtResource("9_wc255")
+type = 2
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[sub_resource type="Resource" id="Resource_gunhw"]
+script = ExtResource("9_wc255")
+type = 3
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
 [node name="Level" type="Node3D" unique_id=1630941922]
 metadata/_edit_lock_ = true
 
@@ -131,8 +127,6 @@ block_color_group = 4
 
 [node name="Player" parent="." unique_id=221013809 instance=ExtResource("3_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
-component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_mijmq"), SubResource("Resource_4kckt"), SubResource("Resource_6bkav"), SubResource("Resource_kyg1c"), SubResource("Resource_w83ew")])
-metadata/_edit_pinned_properties_ = [&"component_resources"]
 
 [node name="HappyGroup" parent="." unique_id=778531110 instance=ExtResource("4_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2674327, 2, 0.39999998)
@@ -151,6 +145,7 @@ metadata/_edit_pinned_properties_ = [&"component_resources"]
 
 [node name="MerchBagPickup" parent="." unique_id=771682360 instance=ExtResource("14_wc255")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6855655, 1.1727722, 12.322831)
+component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_vd0sl"), SubResource("Resource_ux5qa")])
 metadata/_edit_group_ = true
 
 [node name="MerchBag" parent="MerchBagPickup" unique_id=1338716786 instance=ExtResource("13_wc255")]
@@ -158,16 +153,18 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.3382368, 0)
 
 [node name="PlushiePickup" parent="." unique_id=717554067 instance=ExtResource("14_wc255")]
 transform = Transform3D(-0.54579484, 0, 0.8379188, 0, 1, 0, -0.8379188, 0, -0.54579484, -11, 1.086847, 10)
+component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_vd0sl"), SubResource("Resource_82cfe")])
 metadata/_edit_group_ = true
 
 [node name="Plushie" parent="PlushiePickup" unique_id=507072438 instance=ExtResource("14_arp2o")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.4610573, 0)
 
-[node name="ChipBackPickup" parent="." unique_id=1860248699 instance=ExtResource("14_wc255")]
+[node name="ChipBagPickup" parent="." unique_id=1860248699 instance=ExtResource("14_wc255")]
 transform = Transform3D(0.9991974, 0.03674011, 0.015953377, -0.020108998, 0.11567251, 0.99308383, 0.03464064, -0.99260765, 0.116318494, 5, 1, -10)
+component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_vd0sl"), SubResource("Resource_gunhw")])
 metadata/_edit_group_ = true
 
-[node name="ChipBag" parent="ChipBackPickup" unique_id=417910255 instance=ExtResource("12_fpun6")]
+[node name="ChipBag" parent="ChipBagPickup" unique_id=417910255 instance=ExtResource("12_fpun6")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.5, 0)
 
 [node name="MoodyGuy1" parent="." unique_id=1804567031 instance=ExtResource("15_wc255")]
@@ -179,11 +176,11 @@ transform = Transform3D(-4.9894977, 0, -4.9096756, 0, 7, 0, 4.9096756, 0, -4.989
 [node name="lilguyTest2" parent="." unique_id=1522618664 instance=ExtResource("3_w8frs")]
 transform = Transform3D(5.28513, 0, 4.5899234, 0, 7, 0, -4.5899234, 0, 5.28513, -6.093088, 0.5109011, -1.7540498)
 
-[node name="table" parent="." unique_id=170215667 instance=ExtResource("17_ux5qa")]
+[node name="table" parent="." unique_id=824117965 instance=ExtResource("17_ux5qa")]
 transform = Transform3D(-2.2881732, 0, -1.0071065, 0, 2.5, 0, 1.0071065, 0, -2.2881732, -3.3417416, 0.45, 5.696326)
 
-[node name="table2" parent="." unique_id=250815178 instance=ExtResource("17_ux5qa")]
+[node name="table2" parent="." unique_id=1305349454 instance=ExtResource("17_ux5qa")]
 transform = Transform3D(-1.504921, 0, 1.9962999, 0, 2.4999998, 0, -1.9962999, 0, -1.504921, 8.92871, 0.45, 5.724583)
 
-[node name="table3" parent="." unique_id=555769980 instance=ExtResource("17_ux5qa")]
+[node name="table3" parent="." unique_id=363744172 instance=ExtResource("17_ux5qa")]
 transform = Transform3D(1.415512, 0, 2.0606616, 0, 2.4999995, 0, -2.0606616, 0, 1.415512, -6.289068, 0.4499995, 0.54090667)
