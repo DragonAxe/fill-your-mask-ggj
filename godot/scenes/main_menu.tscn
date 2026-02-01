@@ -38,12 +38,32 @@ layout_mode = 2
 text = "Start Game"
 
 [node name="Credits" type="Button" parent="VBoxContainer" unique_id=118433345]
+visible = false
 layout_mode = 2
 text = "Credits"
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1073744840]
 layout_mode = 2
 text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=160041667]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Credits:
+Inkyblossom - 3D (f)artist
+Edgar - 3D Artist, SFX
+Reece - Programmer
+
+"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

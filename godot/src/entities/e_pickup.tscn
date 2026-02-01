@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://cqmkuu1snbwbm"]
 
 [ext_resource type="Script" uid="uid://dakqmhkdpcx12" path="res://src/entities/e_pickup.gd" id="1_dxnfv"]
+[ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="2_2uugd"]
+[ext_resource type="Script" uid="uid://coh8jvqn553wx" path="res://src/components/c_pickup.gd" id="3_bppp8"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_dxnfv"]
-radius = 1.0
+[sub_resource type="Resource" id="Resource_vd0sl"]
+script = ExtResource("3_bppp8")
+metadata/_custom_type_script = "uid://coh8jvqn553wx"
 
-[node name="Pickup" type="Node3D" unique_id=778531110]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxnfv"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Pickup" type="RigidBody3D" unique_id=1569042233]
 script = ExtResource("1_dxnfv")
+component_resources = Array[ExtResource("2_2uugd")]([SubResource("Resource_vd0sl")])
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1076214690]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=984871221]
-shape = SubResource("SphereShape3D_dxnfv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=984871221]
+shape = SubResource("BoxShape3D_dxnfv")

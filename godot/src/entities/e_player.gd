@@ -7,4 +7,6 @@ func on_ready():
     if has_component(C_Transform):
         var c_trs = get_component(C_Transform) as C_Transform
         c_trs.position = self.global_position
+    var c_mood = get_component(C_Mood) as C_Mood
+    c_mood.type = C_Mood.random_mood()
     $ESocialBatteryIndicator.add_relationship(Relationship.new(C_Visualizes.new(), self))

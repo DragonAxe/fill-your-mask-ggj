@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="7_4kckt"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="8_6bkav"]
 [ext_resource type="PackedScene" uid="uid://xgb1xe4yhai4" path="res://src/entities/e_social_battery_indicator.tscn" id="9_kyg1c"]
+[ext_resource type="Script" uid="uid://bm6iy3jqfp4o7" path="res://src/pickup_label.gd" id="10_al55t"]
 
 [sub_resource type="Resource" id="Resource_mijmq"]
 script = ExtResource("3_rkvdg")
@@ -49,5 +50,41 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 target_position = Vector3(-2, 0, 0)
 
 [node name="ESocialBatteryIndicator" parent="." unique_id=1606906781 instance=ExtResource("9_kyg1c")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=769842767]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.7853982
+pivot_offset = Vector2(4, 4)
+
+[node name="PickupLabel" type="PanelContainer" parent="." unique_id=2026017249]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.75
+offset_top = -48.0
+offset_right = 73.75
+offset_bottom = -21.13501
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_al55t")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="PickupLabel" unique_id=1360888100]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Press \"E\" to pickup"
 
 [editable path="PlayerCharacter"]
