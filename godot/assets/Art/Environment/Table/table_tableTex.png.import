@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpuyrd7fjk3c3"
-path.s3tc="res://.godot/imported/table_tableTex.png-e4422632d37534dc72e200c3afa211ab.s3tc.ctex"
+path.s3tc="res://.godot/imported/table_tableTex.png-b832a94ba59a08f089c3b39ad73b40f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Art/Environment/table_tableTex.png"
-dest_files=["res://.godot/imported/table_tableTex.png-e4422632d37534dc72e200c3afa211ab.s3tc.ctex"]
+source_file="res://assets/Art/Environment/Table/table_tableTex.png"
+dest_files=["res://.godot/imported/table_tableTex.png-b832a94ba59a08f089c3b39ad73b40f7.s3tc.ctex"]
 
 [params]
 
