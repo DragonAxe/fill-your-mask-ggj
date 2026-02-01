@@ -6,12 +6,19 @@
 [ext_resource type="Script" uid="uid://d02juewu03isx" path="res://src/systems/s_battery_drain_stand_still.gd" id="3_ibtd2"]
 [ext_resource type="Script" uid="uid://c7177fhsf2eeo" path="res://src/systems/s_update_social_battery_indicator.gd" id="4_ibtd2"]
 [ext_resource type="Script" uid="uid://c5pc4j122gjky" path="res://src/systems/s_synchronize_transform.gd" id="5_cekhb"]
+[ext_resource type="Script" uid="uid://c0msx1ujs5ixw" path="res://src/systems/s_battery_drain_mood_mismatch.gd" id="7_wdfho"]
+[ext_resource type="Script" uid="uid://cl8vcgnonrgie" path="res://src/systems/s_apply_battery_change.gd" id="8_ce4gx"]
 
 [node name="DefaultSystems" type="Node" unique_id=755715131]
 
 [node name="first" type="Node" parent="." unique_id=1837750511]
 script = ExtResource("1_vfbru")
 metadata/_custom_type_script = "uid://b3vi2ingux88g"
+
+[node name="ApplyBatteryChangeSystem" type="Node" parent="first" unique_id=529041948]
+script = ExtResource("8_ce4gx")
+group = &"first"
+metadata/_custom_type_script = "uid://cl8vcgnonrgie"
 
 [node name="update" type="Node" parent="." unique_id=526687223]
 script = ExtResource("1_vfbru")
@@ -34,13 +41,17 @@ metadata/_custom_type_script = "uid://xn3fmr3axcn"
 
 [node name="SynchronizeTransformSystem" type="Node" parent="update" unique_id=1998735847]
 script = ExtResource("5_cekhb")
+group = &"update"
 metadata/_custom_type_script = "uid://c5pc4j122gjky"
 
-[node name="UpdateSocialBatteryIndicatorSystem" type="Node" parent="update" unique_id=82884813]
-script = ExtResource("4_ibtd2")
-group = &"update"
-metadata/_custom_type_script = "uid://c7177fhsf2eeo"
+[node name="BatteryDrainMoodMismatchSystem" type="Node" parent="update" unique_id=1967983536]
+script = ExtResource("7_wdfho")
+metadata/_custom_type_script = "uid://c0msx1ujs5ixw"
 
 [node name="last" type="Node" parent="." unique_id=711294309]
 script = ExtResource("1_vfbru")
 metadata/_custom_type_script = "uid://b3vi2ingux88g"
+
+[node name="UpdateSocialBatteryIndicatorSystem" type="Node" parent="last" unique_id=82884813]
+script = ExtResource("4_ibtd2")
+metadata/_custom_type_script = "uid://c7177fhsf2eeo"

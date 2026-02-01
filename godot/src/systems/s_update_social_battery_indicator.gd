@@ -12,5 +12,9 @@ func process(entities: Array[Entity], _components: Array, _delta: float):
         
         for player_entity in ents_with_c_socialbattery:
             var c_battery = player_entity.get_component(C_SocialBattery) as C_SocialBattery
-            var bar_node = indicator_entity.get_node(comp.bar_node) as Range
-            bar_node.value = c_battery.amount
+            var battery_bar_node = indicator_entity.get_node(comp.battery_bar_path) as Range
+            var stress_bar_up_node = indicator_entity.get_node(comp.stress_bar_up_path) as Range
+            var stress_bar_down_node = indicator_entity.get_node(comp.stress_bar_down_path) as Range
+            battery_bar_node.value = c_battery.amount
+            stress_bar_up_node.value = lerpf(stress_bar_up_node.value, maxf(c_battery.change, 0.0) * 1000.0, 0.1)
+            stress_bar_down_node.value = lerpf(stress_bar_down_node.value, maxf(-c_battery.change, 0.0) * 1000.0, 0.1)

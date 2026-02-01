@@ -7,7 +7,6 @@ extends Component
     get:
         return _position
     set(value):
-        print(value)
         _push_history(_position)
         _position = value
 

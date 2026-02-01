@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b3oipfe1n26th" path="res://src/entities/e_player.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d3xhkavk4ost3" path="res://assets/Art/lilGuy/lilguyTest.glb" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bxqdvcxx5m5r3" path="res://src/entities/e_group.tscn" id="4_mx8sn"]
+[ext_resource type="Script" uid="uid://dxrqiejdsq0i" path="res://src/components/c_player.gd" id="5_8iemx"]
 [ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="5_t1rx8"]
 [ext_resource type="Script" uid="uid://drfds4opchu5j" path="res://src/components/c_group.gd" id="6_8iemx"]
+[ext_resource type="Script" uid="uid://cqwn1g3v7jb7f" path="res://src/components/c_social_battery.gd" id="6_64w2a"]
 [ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="7_64w2a"]
 [ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="8_fpun6"]
 [ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="9_wc255"]
@@ -22,6 +24,28 @@ background_mode = 2
 sky = SubResource("Sky_or4b6")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_mijmq"]
+script = ExtResource("5_8iemx")
+metadata/_custom_type_script = "uid://dxrqiejdsq0i"
+
+[sub_resource type="Resource" id="Resource_4kckt"]
+script = ExtResource("6_64w2a")
+metadata/_custom_type_script = "uid://cqwn1g3v7jb7f"
+
+[sub_resource type="Resource" id="Resource_6bkav"]
+script = ExtResource("9_wc255")
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[sub_resource type="Resource" id="Resource_kyg1c"]
+script = ExtResource("8_fpun6")
+type = 1
+metadata/_custom_type_script = "uid://v3yycfvm1yno"
+
+[sub_resource type="Resource" id="Resource_w83ew"]
+script = ExtResource("7_64w2a")
+synchronized_position = NodePath("PlayerCharacter")
+metadata/_custom_type_script = "uid://bo1l048gnxe72"
 
 [sub_resource type="Resource" id="Resource_qtbll"]
 script = ExtResource("6_8iemx")
@@ -85,7 +109,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="BasicBlock" parent="." unique_id=612444401 instance=ExtResource("2_w8frs")]
-transform = Transform3D(30.344648, 0, 0, 0, 1, 0, 0, 0, 28.446966, -1.7720977, 0, 1.6313562)
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
 
 [node name="BasicBlock2" parent="." unique_id=300831178 instance=ExtResource("2_w8frs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2369037, 1, 0.49404907)
@@ -104,6 +128,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6488216, 0.5, 1.3049202)
 
 [node name="Player" parent="." unique_id=221013809 instance=ExtResource("3_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
+component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_mijmq"), SubResource("Resource_4kckt"), SubResource("Resource_6bkav"), SubResource("Resource_kyg1c"), SubResource("Resource_w83ew")])
+metadata/_edit_pinned_properties_ = [&"component_resources"]
 
 [node name="HappyGroup" parent="." unique_id=778531110 instance=ExtResource("4_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2674327, 2, 0.39999998)

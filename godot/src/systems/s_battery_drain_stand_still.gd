@@ -9,4 +9,4 @@ func process(entities: Array[Entity], components: Array, delta: float):
         var c_transform = components[0][0] as C_Transform
         var c_battery = components[1][0] as C_SocialBattery
         if c_transform.get_last_positions()[0] == c_transform.position:
-            c_battery.amount -= 1.0 * delta
+            c_battery.change -= 1.0 * delta
