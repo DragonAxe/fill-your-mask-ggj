@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dp81ck42qi164" path="res://src/main_menu.gd" id="1_l6cm7"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l6cm7"]
+load_path = "res://.godot/imported/FillYourMaskLogo.png-d48eb6ced3ac8755401d9e0f7216b6fb.ctex"
+
 [node name="MainMenu" type="Node" unique_id=517611687]
 script = ExtResource("1_l6cm7")
 
@@ -11,30 +14,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.56, 0.56, 0.56, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1968506281]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
+offset_left = 64.0
+offset_top = -265.5
+offset_right = 364.0
+offset_bottom = 265.5
 grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1975445797]
+[node name="FillYourMaskTexture" type="TextureRect" parent="VBoxContainer" unique_id=858835969]
 layout_mode = 2
-text = "Fill My Mask"
+texture = SubResource("CompressedTexture2D_l6cm7")
+expand_mode = 4
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=62254330]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=2083922701]
 layout_mode = 2
 
 [node name="StartGame" type="Button" parent="VBoxContainer" unique_id=342047345]
 layout_mode = 2
+size_flags_stretch_ratio = 9.42
 text = "Start Game"
 
 [node name="Credits" type="Button" parent="VBoxContainer" unique_id=118433345]
@@ -46,23 +50,12 @@ text = "Credits"
 layout_mode = 2
 text = "Quit"
 
-[node name="Label" type="Label" parent="." unique_id=160041667]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=160041667]
+layout_mode = 2
 text = "Credits:
-Inkyblossom - 3D (f)artist
-Edgar - 3D Artist, SFX
-Reece - Programmer
-
-"
+Inkyblossom - 3D Artist
+Edgar - 3D Artist, SFX, UI
+Reece - Programmer"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]

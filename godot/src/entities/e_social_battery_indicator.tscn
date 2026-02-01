@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cj1lt5aa1rlui" path="res://src/entities/e_social_battery_indicator.gd" id="1_wicxw"]
 [ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="2_4rwd8"]
 [ext_resource type="Script" uid="uid://d1cogy7mof5a5" path="res://src/components/c_slocal_battery_indicator.gd" id="3_21opm"]
+[ext_resource type="Texture2D" uid="uid://cel1utemva4s2" path="res://assets/UI/SocialBattery/New_Background_Progress_Battery.png" id="4_4kgav"]
+[ext_resource type="Texture2D" uid="uid://bogch1grwihjf" path="res://assets/UI/SocialBattery/New_Outline_Battery.png" id="5_423dx"]
+[ext_resource type="Texture2D" uid="uid://doh7xuykiys85" path="res://assets/UI/SocialBattery/New_Progress_Bar.png" id="6_ttb42"]
 
 [sub_resource type="Resource" id="Resource_rcmwb"]
 script = ExtResource("3_21opm")
@@ -33,7 +36,7 @@ color = Color(0, 0, 0, 0.5058824)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 58.0
+offset_bottom = 192.0
 grow_horizontal = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=726206890]
@@ -44,6 +47,17 @@ horizontal_alignment = 1
 [node name="BatteryBar" type="ProgressBar" parent="VBoxContainer" unique_id=752232385]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer" unique_id=1671024117]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 50.0
+texture_under = ExtResource("4_4kgav")
+texture_over = ExtResource("5_423dx")
+texture_progress = ExtResource("6_ttb42")
+texture_progress_offset = Vector2(15, 14)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=907294053]
 custom_minimum_size = Vector2(0, 20)
