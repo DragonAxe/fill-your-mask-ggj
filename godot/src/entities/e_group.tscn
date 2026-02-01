@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bxqdvcxx5m5r3"]
+
+[ext_resource type="Script" uid="uid://eji40ueyic4y" path="res://src/entities/e_group.gd" id="1_t3hwt"]
+[ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="2_ntq84"]
+[ext_resource type="Script" uid="uid://drfds4opchu5j" path="res://src/components/c_group.gd" id="3_lp3rl"]
+[ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="4_opnrk"]
+[ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="5_xav7r"]
+[ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="6_8nm8e"]
+
+[sub_resource type="Resource" id="Resource_qtbll"]
+script = ExtResource("3_lp3rl")
+metadata/_custom_type_script = "uid://drfds4opchu5j"
+
+[sub_resource type="Resource" id="Resource_465mo"]
+script = ExtResource("4_opnrk")
+metadata/_custom_type_script = "uid://bo1l048gnxe72"
+
+[sub_resource type="Resource" id="Resource_64yst"]
+script = ExtResource("5_xav7r")
+metadata/_custom_type_script = "uid://v3yycfvm1yno"
+
+[sub_resource type="Resource" id="Resource_5a6x2"]
+script = ExtResource("6_8nm8e")
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[sub_resource type="SphereMesh" id="SphereMesh_mjbx6"]
+
+[node name="Group" type="Node3D" unique_id=778531110]
+script = ExtResource("1_t3hwt")
+component_resources = Array[ExtResource("2_ntq84")]([SubResource("Resource_qtbll"), SubResource("Resource_465mo"), SubResource("Resource_64yst"), SubResource("Resource_5a6x2")])
+
+[node name="Center" type="Node3D" parent="." unique_id=205828898]
+
+[node name="EditorOnly" type="MeshInstance3D" parent="." unique_id=2071995857]
+mesh = SubResource("SphereMesh_mjbx6")

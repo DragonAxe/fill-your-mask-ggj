@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://ycy3ms7jhu2f"]
 
 [ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="2_w8frs"]
-[ext_resource type="PackedScene" uid="uid://b3oipfe1n26th" path="res://scenes/e_player.tscn" id="3_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://b3oipfe1n26th" path="res://src/entities/e_player.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d3xhkavk4ost3" path="res://assets/Art/lilGuy/lilguyTest.glb" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://bxqdvcxx5m5r3" path="res://src/entities/e_group.tscn" id="4_mx8sn"]
+[ext_resource type="Script" uid="uid://b6k13gc2m4e5s" path="res://addons/gecs/ecs/component.gd" id="5_t1rx8"]
+[ext_resource type="Script" uid="uid://drfds4opchu5j" path="res://src/components/c_group.gd" id="6_8iemx"]
+[ext_resource type="Script" uid="uid://bo1l048gnxe72" path="res://src/components/c_transform.gd" id="7_64w2a"]
+[ext_resource type="Script" uid="uid://v3yycfvm1yno" path="res://src/components/c_mood.gd" id="8_fpun6"]
+[ext_resource type="Script" uid="uid://nlpp7fel0jf0" path="res://src/components/c_swag_item.gd" id="9_wc255"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cela1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +22,57 @@ background_mode = 2
 sky = SubResource("Sky_or4b6")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_qtbll"]
+script = ExtResource("6_8iemx")
+metadata/_custom_type_script = "uid://drfds4opchu5j"
+
+[sub_resource type="Resource" id="Resource_465mo"]
+script = ExtResource("7_64w2a")
+metadata/_custom_type_script = "uid://bo1l048gnxe72"
+
+[sub_resource type="Resource" id="Resource_64yst"]
+script = ExtResource("8_fpun6")
+type = 1
+metadata/_custom_type_script = "uid://v3yycfvm1yno"
+
+[sub_resource type="Resource" id="Resource_5a6x2"]
+script = ExtResource("9_wc255")
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[sub_resource type="Resource" id="Resource_8c41q"]
+script = ExtResource("6_8iemx")
+metadata/_custom_type_script = "uid://drfds4opchu5j"
+
+[sub_resource type="Resource" id="Resource_olg7q"]
+script = ExtResource("7_64w2a")
+metadata/_custom_type_script = "uid://bo1l048gnxe72"
+
+[sub_resource type="Resource" id="Resource_t1rx8"]
+script = ExtResource("8_fpun6")
+type = 3
+metadata/_custom_type_script = "uid://v3yycfvm1yno"
+
+[sub_resource type="Resource" id="Resource_8iemx"]
+script = ExtResource("9_wc255")
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
+
+[sub_resource type="Resource" id="Resource_64w2a"]
+script = ExtResource("6_8iemx")
+metadata/_custom_type_script = "uid://drfds4opchu5j"
+
+[sub_resource type="Resource" id="Resource_fpun6"]
+script = ExtResource("7_64w2a")
+metadata/_custom_type_script = "uid://bo1l048gnxe72"
+
+[sub_resource type="Resource" id="Resource_wc255"]
+script = ExtResource("8_fpun6")
+type = 2
+metadata/_custom_type_script = "uid://v3yycfvm1yno"
+
+[sub_resource type="Resource" id="Resource_arp2o"]
+script = ExtResource("9_wc255")
+metadata/_custom_type_script = "uid://nlpp7fel0jf0"
 
 [node name="Level" type="Node3D" unique_id=1630941922]
 metadata/_edit_lock_ = true
@@ -38,8 +95,27 @@ block_color_group = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1831093, 1, 5.675357)
 block_color_group = 1
 
+[node name="BasicBlock4" parent="." unique_id=1555644999 instance=ExtResource("2_w8frs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.949478, 1, 5.675357)
+block_color_group = 4
+
 [node name="lilguyTest" parent="." unique_id=1903256947 instance=ExtResource("3_w8frs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6488216, 0.5, 1.3049202)
 
 [node name="Player" parent="." unique_id=221013809 instance=ExtResource("3_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
+
+[node name="HappyGroup" parent="." unique_id=778531110 instance=ExtResource("4_mx8sn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2674327, 2, 0.39999998)
+component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_qtbll"), SubResource("Resource_465mo"), SubResource("Resource_64yst"), SubResource("Resource_5a6x2")])
+metadata/_edit_pinned_properties_ = [&"component_resources"]
+
+[node name="CalmGroup" parent="." unique_id=59464090 instance=ExtResource("4_mx8sn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1182268, 2, 5.7583404)
+component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_8c41q"), SubResource("Resource_olg7q"), SubResource("Resource_t1rx8"), SubResource("Resource_8iemx")])
+metadata/_edit_pinned_properties_ = [&"component_resources"]
+
+[node name="SadGroup" parent="." unique_id=391226171 instance=ExtResource("4_mx8sn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.912512, 2.0000005, 5.722271)
+component_resources = Array[ExtResource("5_t1rx8")]([SubResource("Resource_64w2a"), SubResource("Resource_fpun6"), SubResource("Resource_wc255"), SubResource("Resource_arp2o")])
+metadata/_edit_pinned_properties_ = [&"component_resources"]
