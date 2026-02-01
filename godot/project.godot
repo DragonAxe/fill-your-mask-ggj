@@ -24,6 +24,10 @@ CsgToolkitAutoload="*uid://w8ad8q4lneis"
 
 enabled=PackedStringArray("res://addons/csg_toolkit/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/gecs/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [gecs]
 
 settings/log_level=1
