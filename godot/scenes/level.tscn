@@ -16,6 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://cqmkuu1snbwbm" path="res://src/entities/e_pickup.tscn" id="14_wc255"]
 [ext_resource type="PackedScene" uid="uid://duytaumea58ns" path="res://assets/Art/Characters/MoodyGuy1/MoodyGuy1.glb" id="15_wc255"]
 [ext_resource type="PackedScene" uid="uid://cyq0o8wc61r4t" path="res://assets/Art/Environment/Table/table.glb" id="17_ux5qa"]
+[ext_resource type="PackedScene" uid="uid://o3tgdufsawkw" path="res://assets/Art/Characters/CalmGuy1/Calmguy.glb" id="17_wu01b"]
+[ext_resource type="PackedScene" uid="uid://rhitu75pebr" path="res://assets/Art/Characters/CalmGuy2/Calmguy2.glb" id="18_3ies3"]
+[ext_resource type="PackedScene" uid="uid://dci2qggsdkk4" path="res://assets/Art/Characters/CalmGuy3/Calmguy3.glb" id="19_xy2fk"]
+[ext_resource type="PackedScene" uid="uid://db70oj6adbqyg" path="res://assets/Art/Characters/HappyGuy1/HappyGuy1.glb" id="20_cmcjb"]
+[ext_resource type="PackedScene" uid="uid://oiuqpdkdmtxs" path="res://assets/Art/Characters/HappyGuy2/HappyGuy2.glb" id="21_556r4"]
+[ext_resource type="PackedScene" uid="uid://7wghd3mrtx6p" path="res://assets/Art/Characters/HappyGuy3/HappyGuy3.glb" id="22_7agi7"]
+[ext_resource type="PackedScene" uid="uid://d2x16ylgeg326" path="res://assets/Art/Characters/MoodyGuy2/MoodyGuy2.glb" id="23_kih21"]
+[ext_resource type="PackedScene" uid="uid://msif6rynj46i" path="res://assets/Art/Characters/MoodyGuy3/MoodyGuy3.glb" id="24_w3o6u"]
+[ext_resource type="Script" uid="uid://dc8eaqctiijbp" path="res://src/play.gd" id="25_3ies3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cela1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -167,15 +176,6 @@ metadata/_edit_group_ = true
 [node name="ChipBag" parent="ChipBagPickup" unique_id=417910255 instance=ExtResource("12_fpun6")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.5, 0)
 
-[node name="MoodyGuy1" parent="." unique_id=1804567031 instance=ExtResource("15_wc255")]
-transform = Transform3D(-6.5313344, 0, 2.5182672, 0, 7, 0, -2.5182672, 0, -6.5313344, 7.978794, 0.5109011, 6.812085)
-
-[node name="lilguyTest" parent="." unique_id=382166717 instance=ExtResource("3_w8frs")]
-transform = Transform3D(-4.9894977, 0, -4.9096756, 0, 7, 0, 4.9096756, 0, -4.9894977, -2.0075827, 0.5109011, 7.222299)
-
-[node name="lilguyTest2" parent="." unique_id=1522618664 instance=ExtResource("3_w8frs")]
-transform = Transform3D(5.28513, 0, 4.5899234, 0, 7, 0, -4.5899234, 0, 5.28513, -6.093088, 0.5109011, -1.7540498)
-
 [node name="table" parent="." unique_id=824117965 instance=ExtResource("17_ux5qa")]
 transform = Transform3D(-2.2881732, 0, -1.0071065, 0, 2.5, 0, 1.0071065, 0, -2.2881732, -3.3417416, 0.45, 5.696326)
 
@@ -184,3 +184,42 @@ transform = Transform3D(-1.504921, 0, 1.9962999, 0, 2.4999998, 0, -1.9962999, 0,
 
 [node name="table3" parent="." unique_id=363744172 instance=ExtResource("17_ux5qa")]
 transform = Transform3D(1.415512, 0, 2.0606616, 0, 2.4999995, 0, -2.0606616, 0, 1.415512, -6.289068, 0.4499995, 0.54090667)
+
+[node name="MoodyGuy1" parent="." unique_id=1804567031 instance=ExtResource("15_wc255")]
+transform = Transform3D(-6.5313344, 0, 2.5182672, 0, 7, 0, -2.5182672, 0, -6.5313344, 7.978794, 0.5109011, 6.812085)
+
+[node name="lilguyTest" parent="." unique_id=382166717 instance=ExtResource("3_w8frs")]
+transform = Transform3D(-6.631294, 0, -2.241861, 0, 7, 0, 2.241861, 0, -6.631294, -2.0075827, 0.5109011, 7.222299)
+
+[node name="lilguyTest2" parent="." unique_id=1522618664 instance=ExtResource("3_w8frs")]
+transform = Transform3D(5.28513, 0, 4.5899234, 0, 7, 0, -4.5899234, 0, 5.28513, -6.093088, 0.5109011, -1.7540498)
+
+[node name="Calmguy" parent="." unique_id=562010397 instance=ExtResource("17_wu01b")]
+transform = Transform3D(-5.834445, 0, 3.8495913, 0, 6.99, 0, -3.8495913, 0, -5.834445, -7.5490313, 0.5109016, 3.029396)
+
+[node name="Calmguy2" parent="." unique_id=36055174 instance=ExtResource("18_3ies3")]
+transform = Transform3D(-2.683746, 0, 6.4542704, 0, 6.99, 0, -6.4542704, 0, -2.683746, 6.526637, 0.5109006, 5.6810703)
+
+[node name="Calmguy3" parent="." unique_id=2002932629 instance=ExtResource("19_xy2fk")]
+transform = Transform3D(3.2035747, 0, -6.212665, 0, 6.99, 0, 6.212665, 0, 3.2035747, -3.829865, 0.51090205, -0.52227306)
+
+[node name="HappyGuy1" parent="." unique_id=1227684955 instance=ExtResource("20_cmcjb")]
+transform = Transform3D(-6.8018737, 0, 1.6107786, 0, 6.99, 0, -1.6107786, 0, -6.8018737, -3.7701597, 0.5109006, 7.9024496)
+
+[node name="HappyGuy2" parent="." unique_id=549440493 instance=ExtResource("21_556r4")]
+transform = Transform3D(0.72749954, 0, -6.952039, 0, 6.99, 0, 6.952039, 0, 0.72749954, 10.991093, 0.5109006, 5.402041)
+
+[node name="HappyGuy3" parent="." unique_id=1894292278 instance=ExtResource("22_7agi7")]
+transform = Transform3D(6.99, 0, 0, 0, 6.99, 0, 0, 0, 6.99, -3.0811148, 0.5109011, 3.899312)
+
+[node name="MoodyGuy2" parent="." unique_id=1104941393 instance=ExtResource("15_wc255")]
+transform = Transform3D(1.6543131, 0, 6.791417, 0, 6.99, 0, -6.791417, 0, 1.6543131, -8.382338, 0.5109006, -0.15027809)
+
+[node name="MoodyGuy3" parent="." unique_id=1481788929 instance=ExtResource("23_kih21")]
+transform = Transform3D(-0.49027517, 0, 6.972785, 0, 6.99, 0, -6.972785, 0, -0.49027517, -5.6192584, 0.5109011, 5.8874674)
+
+[node name="MoodyGuy4" parent="." unique_id=989416606 instance=ExtResource("24_w3o6u")]
+transform = Transform3D(-0.033305265, 0, -6.9899206, 0, 6.99, 0, 6.9899206, 0, -0.033305265, 10.000325, 0.62074196, 3.9026446)
+
+[node name="Node" type="Node" parent="." unique_id=1181433495]
+script = ExtResource("25_3ies3")
